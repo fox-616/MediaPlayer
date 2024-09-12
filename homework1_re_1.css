@@ -1,0 +1,147 @@
+:root {
+    --vol-thumb-appearance: none;
+    --vol-thumb-width: 10px;
+    --vol-thumb-height: 10px;
+    --vol-thumb-border-radius: 50%;
+    --vol-thumb-background-color: blue;
+
+    --proGress-appearance: none;
+    --proGress-width: 5px;
+    --proGress-height: 5px;
+    --proGress-border-radius: 50%;
+    --proGress-background-color: red;
+    --proGress-transition: 0.5s;
+    --proGress-hover-width: 15px;
+    --proGress-hover-height: 15px;
+}
+
+#controlPanel {
+    width: 550px;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+
+    background-image: url(images/logo.png), url(images/刀劍神域50.jpg);
+    background-repeat: no-repeat;
+    background-size: 20%, cover;
+    background-position: bottom right, center;
+}
+
+#controlPanel>span {
+    font-family: webdings;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 2px 2px 5px black;
+    font-size: 24pt;
+}
+
+#progressBar {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: blanchedalmond;
+    /*  background-image:linear-gradient(to right,blue,50%,blanchedalmond 50%); */
+    /* cursor: pointer; */
+}
+
+#progressBar::-webkit-slider-thumb {
+    appearance: var(--proGress-appearance);
+    width: var(--proGress-width);
+    height: var(--proGress-height);
+    border-radius: var(--proGress-border-radius);
+    background-color: var(--proGress-background-color);
+}
+
+#progressBar::-webkit-slider-thumb:hover {
+    appearance: var(--proGress-appearance);
+    width: var(--proGress-hover-width);
+    height: var(--proGress-hover-height);
+    border-radius: var(--proGress-border-radius);
+    background-color: var(--proGress-background-color);
+    transition: var(--proGress-transition);
+}
+
+#volController {
+    cursor: pointer;
+}
+
+#volController>input[type="range"] {
+    appearance: none;
+    width: 83%;
+    height: 5px;
+    background-color: blue;
+    margin-bottom: 5px;
+}
+
+#volController>input[type="range"]::-webkit-slider-thumb {
+    appearance: var(--vol-thumb-appearance);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+    background-color: var(--vol-thumb-background-color);
+}
+
+#volController>input[type="range"]::-moz-range-thumb {
+    appearance: var(--vol-thumb-appearance);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+    background-color: var(--vol-thumb-background-color);
+}
+
+#volController>input[type="button"] {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px black;
+    background-color: whitesmoke;
+}
+
+#volController>input[type="text"] {
+    width: 25px;
+    border: 0;
+    background-color: black;
+    color: yellow;
+}
+
+#info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#musicPool {
+    width: 100%;
+    text-align: center;
+}
+
+.btnBColor {
+    background-color: lightsalmon;
+}
+
+
+#songBook {
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#songBook>div {
+    border: 1px solid rgb(41, 41, 56);
+    height: 200px;
+    width: 43.3%;
+    overflow: auto;
+}
+
+#songBook>div>div {
+    cursor: pointer;
+    box-shadow: 0 0 3px black;
+    padding: 5px;
+}
+
+#songBook>button {
+    height: 50px;
+}

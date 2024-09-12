@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="player.css"-->
+    <link rel="stylesheet" href="homework1_re_1.css">
+</head>
+
+<body>
+
+    <audio id="audio" src="" title=""></audio>
+
+    <hr>
+
+    <div id="controlPanel">
+        <!--下拉式選歌選項-->
+        <select id="musicPool" onchange="changeMusic(0)">
+
+        </select>
+        <hr>
+        <span id="play" onclick="playMusic()" title="播放音樂">4</span>
+        <!-- <span id="pauseMusic" onclick="pauseMusic()">;</span> -->
+        <span onclick="stopMusic()" title="停止音樂">&lt;</span>
+        <span onclick="changeMusic(-1)" title="上一首">9</span>
+        <span onclick="changePro(-10)" title="後退10秒">7</span>
+        <span onclick="changePro(10)" title="快轉10秒">8</span>
+        <span onclick="changeMusic(1)" title="下一首">:</span>
+        <span id="musicMuted" onclick="muted()" title="靜音">U</span>
+        <span onclick="setLoopFunc()" title="單曲循環">q</span>
+        <span onclick="setLoopFunc()" title="隨機播放">s</span>
+        <span onclick="setLoopFunc()" title="全部播放">`</span>
+        <span onclick="showSongBoook()">@</span>
+
+        <hr>
+
+        <input type="range" value="0" max="10000" id="progressBar" oninput="setProgress()">
+
+        <hr>
+        <!-- 設定音量 -->
+        <div id="volController">
+            <input type="range" value=10000 oninput="setVolumeByRangBar()">
+            <input type="button" value="-" onclick="changeVolume(-1)">
+            <input type="button" value="+" onclick="changeVolume(1)">
+            <input type="text" value=100 readonly>
+        </div>
+        <!-- 資訊看板 -->
+        <div id="info">
+            <div>請按下播放鈕</div>
+            <div>00:00/00:00</div>
+            <div>正常</div>
+        </div>
+
+        <hr>
+
+        <div id="songBook">
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div title="music/Animal Sounds Song _ The Singing Walrus.mp3">Animal Sounds Song </div>
+                <div title="music/Happy Birthday Song _ The Singing Walrus.mp3">Happy Birthday Song</div>
+                <div title="music/Hello Song for Kids _ Greeting Song for Kids _ The Singing Walrus.mp3">Hello Song for
+                    Kids</div>
+                <div title="music/walking in the jungle .mp3">walking in the jungle</div>
+                <div title="music/Wash Your Hands Song _ Music for Kids _ The Singing Walrus.mp3">Wash Your Hands Song
+                </div>
+            </div>
+
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+
+            </div>
+            <button onclick="updateMusicPool()">更新歌單</button>
+        </div>
+</body>
+
+<script src="homework1_re_1.js"></script>
+
+</html>
